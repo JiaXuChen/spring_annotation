@@ -1,5 +1,7 @@
 package com.dudupig.spring.annotation.importAndFactoryBean.pojo;
 
+import org.springframework.context.ApplicationContext;
+
 public class Pig {
     private String name;
     //    public Pig(){
@@ -13,7 +15,8 @@ public class Pig {
      * 创建的时候会调用无参构造器。
      * @param cat
      */
-    public Pig(Cat cat) {
+    public Pig(Cat cat, ApplicationContext applicationContext) {
+        System.out.println(applicationContext.getBean("cat"));
         this.name = cat.getName();
     }
 
