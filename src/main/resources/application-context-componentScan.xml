@@ -1,0 +1,16 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+        <!--扫描包下所有有注解@Controller,@Service,@Repository,@Component的类，进行bean的注入。
+        实际上@Configuration这个注解类定义的时候也被@Component标注过，所以这个注解标识的类也会注入bean。-->
+        <context:component-scan base-package="com.dudupig.spring.web"/>
+        <!--<context:component-scan base-package="com.dudupig.spring"/>-->
+        <bean id="person" class="com.dudupig.spring.annotation.componentScan_scope_lazy.pojo.Student">
+            <property name="age" value="0"/>
+            <property name="name" value="dudupig"/>
+            <property name="job" value="student"/>
+         </bean>
+
+</beans>
